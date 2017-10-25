@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "NoClick",
+    "description": "This extension finds a TL;DR",
+    "version": "0.1",
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": ["main.js"]
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["picoModal-3.0.0.min.js", "script.js"],
+        "run_at": "document_end"
+    }],
+    "web_accessible_resources": ["noclick-style-overwrite.css"]
+}
